@@ -1,0 +1,82 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon class="cart-icon" name="cart-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title class="app-title">Shopping List</ion-title>
+    <ion-buttons slot="end">
+      <!--<ion-button shape="round" class="clear-button" fill="solid" (click)="clearList()">
+        Clear
+        <ion-icon slot="end" name="backspace-outline"></ion-icon>
+      </ion-button>-->
+      <ion-icon class="clear-icon" (click)="clearList()" slot="end" name="backspace-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Placeholder for Empty List -->
+  <div *ngIf="items.length === 0" class="empty-state">
+    <img src="../../assets/images/empty.jpg" alt="Empty List" class="empty-image" />
+    <p class="empty-text">Your shopping list is empty.</p>
+  </div>
+
+  <!-- Shopping List -->
+  <ion-list lines="none" *ngIf="items.length > 0">
+    <ion-item-sliding *ngFor="let item of items">
+      <ion-item [class.boughts]="item.isBought">
+        <!-- Quantity Controls -->
+        <div slot="start" class="quantity-controls">
+          <ion-button size="small" class="quantity-button" (click)="decreaseQuantity(item)">
+            <ion-icon slot="icon-only" name="remove"></ion-icon>
+          </ion-button>
+          <span class="quantity" [class.boughtII]="item.isBought">{{ item.quantity }}</span>
+          <ion-button size="small" class="quantity-button" (click)="increaseQuantity(item)">
+            <ion-icon slot="icon-only" name="add"></ion-icon>
+          </ion-button>
+        </div>
+
+        <ion-label [class.bought]="item.isBought">{{ item.name }}</ion-label>
+
+        <ion-checkbox
+          slot="end"
+          [checked]="item.isBought"
+          (ionChange)="markAsBought(item)"
+        ></ion-checkbox>
+      </ion-item>
+
+      <!-- Swipe Options -->
+      <ion-item-options side="end">
+        <!-- Price Input Option -->
+        <ion-item-option color="light">
+          <div class="price-input">
+            <ion-input
+              type="text"
+              class="custom"
+              placeholder="Price"
+              [ngModel]="item.price"
+              (ngModelChange)="item.price = $event; formatCurrencyInput(item)"
+            ></ion-input>
+          </div>
+        </ion-item-option>
+
+        <!-- Delete Option -->
+        <ion-item-option color="danger" (click)="deleteItem(item)">
+          <ion-icon class="delete-option" name="trash-sharp"></ion-icon>
+        </ion-item-option>
+
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
+
+<ion-footer class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-title slot="start">
+      {{ getTotalQuantity() }} {{ getTotalQuantity() === 1 ? 'Item' : 'Items' }} | Total price: {{ getTotalAmount() | currency:'ZAR':'R' }}
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-icon (click)="addItem()" name="add-circle-sharp"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

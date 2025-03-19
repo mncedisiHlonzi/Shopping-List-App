@@ -1,0 +1,210 @@
+/* Header Toolbar */
+ion-header {
+  ion-toolbar {
+    font-weight: bold;
+    box-shadow: none;
+    --background: indigo;
+    --color: white;
+    padding-top: 30px;
+  }
+
+  .clear-icon{
+    font-size: 2rem;
+    margin-right: 8px;
+    color: white;
+  }
+}
+
+ion-content {
+  --background: white;
+  --color: #000;
+}
+
+.cart-icon{
+  font-size: 2rem;
+  margin-left: 7px;
+}
+.app-title{
+  font-size: 1rem;
+  font-weight: 700;
+}
+.clear-button{
+  margin-right: 13px;
+  --background: white;
+  --color: indigo !important;
+  font-weight: 700;
+  text-transform: none;
+}
+
+ion-input.custom {
+  --color: #000;
+  --placeholder-color: gray;
+  --placeholder-opacity: 0.8;
+
+  --padding-bottom: 10px;
+  --padding-end: 10px;
+  --padding-start: 10px;
+  --padding-top: 10px;
+}
+
+ion-list {
+  margin-bottom: 60px;
+  background-color: white;
+}
+
+ion-item-sliding{
+  width: 95%;
+  margin: auto;
+  align-items: center;
+  //border-radius: 7px;
+  //border-left: 6px solid #6815ec;
+  //margin-bottom: 3px;
+  //box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+ion-item-option{
+  background: white;
+  --color: #000;
+  //border-left: 6px solid #6815ec;
+}
+
+ion-item {
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --background: #f1f1f1;
+  --color: #000;
+  //--border-radius: 7px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  margin-bottom: 4px;
+  font-weight: 700;
+  border-left: 6px solid indigo;
+}
+
+ion-checkbox {
+  margin-right: 10px;
+  --checkbox-background-checked: #e6e6e6;
+  --checkmark-color: #888;
+  --border-color-checked: #e6e6e6;
+  --border-color: indigo;
+  --checkbox-background: #f1f1f1;
+  --size: 24px;
+}
+
+ion-checkbox::part(container) {
+  border-radius: 8px;
+}
+
+ion-button {
+  margin: 20px;
+}
+
+.bought {
+  text-decoration: line-through;
+  color: #888;
+  font-weight: 700;
+}
+.boughts {
+  border-left: 6px solid #888;
+}
+.boughtII {
+  color: #888;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-controls ion-icon{
+  font-size: 1.3rem;
+  color: indigo;
+}
+
+.quantity {
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 20px;
+  text-align: center;
+}
+.quantity-button{
+  --background: #e6e6e6;
+  --box-shadow: none !important;
+}
+
+.price-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  ion-input {
+    width: 80px;
+    border: 2px solid #d4d4d4;
+    border-radius: 4px;
+    padding: 4px;
+  }
+}
+
+.delete-option {
+  color: #ff0000;
+  font-size: 2.5rem;
+}
+
+//ion-fab-button {
+  //--background: indigo;
+  //--background-activated: indigo;
+  //--background-hover: #190425;
+  //--border-radius: 15px;
+  //--box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  //--color: white;
+//}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  padding: 20px;
+
+  .empty-image {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+  }
+
+  .empty-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: #666;
+    margin: 5px 0;
+  }
+}
+
+ion-footer {
+  ion-toolbar {
+    --background: white;
+    --color: Black;
+    padding: 10px;
+  }
+
+  /*ion-button{
+    --margin-right: 13px;;
+    //--background: indigo !important;
+    --color: #fff !important;
+    text-transform: none;
+  }*/
+
+  ion-title{
+    font-size: 0.7rem;
+  }
+
+  ion-icon{
+    font-size: 3.5rem;
+    color: indigo;
+    margin-bottom: 7px;
+  }
+}
